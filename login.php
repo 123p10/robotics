@@ -6,7 +6,7 @@
 <span style="position:absolute;left:250px;text-align:center;font-family: Verdana, Geneva, sans-serif; font-size:24px; color:#274472;font-size:300%;">LOGIN</span>
 
 
-<form>
+<form action="loginclass.php"method="post">
 	<br><br><br><br><br><br><br><br><br><br>
 
 	<span style="position:absolute;left:280px;font-family: Verdana, Geneva, sans-serif; font-size:20px;top:170px">Username:</span>
@@ -18,24 +18,11 @@
 	<input type="text"name="pass"id="pass" style="font-size:25;position:absolute;left:75px;border-radius:20px;height:50px;width:500px;">	</input>
 	<br><br><br><br>
 	<span style = "position:absolute;left:250px;width:160px;height:50px;">
-	<button type="button"  onClick="log()" name="login"style="width:150px;height:75px;border-radius:20px;"><span style="font-size:20px;">LOGIN</span>
+	<input type="submit"   name="login"style="width:150px;height:75px;border-radius:20px;" value="LOGIN">
 	</button>
 	</span>
-
-	<script>
-function log(){
-	var user = document.getElementById("user").value;
-	var pass = document.getElementById("pass").value;
-	$.ajax({
-		url:"loginclass.php"
-		data {user : user},
-		data {pass : pass}
-	});
-	
-
-}
-</script>
 </form>
+<a style="position:absolute;left:285px;top:550px;"href="register.php">REGISTER</a>
 
 </div>
 </body>
