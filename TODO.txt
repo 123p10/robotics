@@ -1,7 +1,7 @@
-1. Videos Storage and Viewing System. USE MYSQL. in videos.php
-2. Add Welcome *Username* in main.php
-3. Add a chat system in a new chat.php
-4. Create an information page with subsections for wiring, coding,designing, building
+
+1. Add Welcome *Username* in main.php
+2. Add a chat system in a new chat.php
+3. Create an information page with subsections for wiring, coding,designing, building
 
 
 Remove from list if you have completed a task
