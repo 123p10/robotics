@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(isset($_SESSION['user'])){
+	unset($_SESSION['user']);
+}
+?>
 <html>
 <body style="background-color: #274472">
 <div id="rectangle" style="position:absolute; margin-top: -325px;top:50%;left:50%;
@@ -5,7 +11,9 @@
 ">
 <span style="position:absolute;left:250px;text-align:center;font-family: Verdana, Geneva, sans-serif; font-size:24px; color:#274472;font-size:300%;">LOGIN</span>
 
+<?php
 
+ ?>
 <form action="loginclass.php"method="post">
 	<br><br><br><br><br><br><br><br><br><br>
 

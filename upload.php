@@ -6,7 +6,7 @@ $canUpload = 1;
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-$user = $_COOKIE["user"];
+$user = $_SESSION["user"];
 if(isset($_POST["submit"])) {
 	if(file_exists($target_file)){
 		echo "It Already Exists";

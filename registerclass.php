@@ -12,6 +12,7 @@ $u = $_POST['user'];
 $p = $_POST['pass'];
 $e = $_POST['email'];
 $privs = $_POST['priv'];
+$hash = password_hash($p, PASSWORD_DEFAULT);
 
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -36,7 +37,7 @@ if(empty($u) || empty($p)){
 #Here is where we can succeed
 else if(!$exist){
 	$sql = "INSERT INTO Users (username, password,email,priv)
-		VALUES ('$u', '$p','$e','$privs')";
+		VALUES ('$u', '$hash','$e','$privs')";
 	if ($conn->query($sql) === TRUE) {
 		echo "New record created successfully";
 		success();

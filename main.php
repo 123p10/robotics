@@ -6,12 +6,13 @@
 
 
   <span style="id='u'color: #FFFFFF;position:absolute;left:1400px; font-size:30px; font-family: 'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic',Arial,sans-serif;">Welcome <?php 
-  if(isset($_COOKIE["user"])){
-	  echo $_COOKIE["user"];
+  session_start();
+  if(isset($_SESSION['user'])){
+	  echo $_SESSION['user'];
   }
   else{
 	  echo "err";
-	  header("location:login.php");
+	 # header("location:login.php");
   }
   ?><br>
   <button onClick="logout()">LOGOUT</button>
@@ -30,7 +31,7 @@
 </html>
 <script>
 	function logout(){
-		document.cookie = "user=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+		//document.cookie = "user=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
 		location.href = '/robot/login.php';
 	}
 	function home(){

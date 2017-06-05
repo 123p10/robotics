@@ -1,0 +1,17 @@
+login.php HTML code for login page
+loginClass.php PHP code for logging in
+
+register.php Register input page
+registerclass.php Check input against SQL DB
+
+main.php Basic template for main sites
+
+chat.php Chat System
+chatRefresh.php Use with ajax to refresh chat box
+
+home.php Announcements page
+announceInput.php Input box and page for announcements
+uploadAnnounce.php Upload announceInput text to SQL DB
+
+videos.php List with links for uploads
+upload.php Upload selected file to server and reference it in SQL DB
