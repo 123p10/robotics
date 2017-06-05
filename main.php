@@ -5,9 +5,21 @@
 <div style="position:absolute;" id="wrapper">
 
 
-  <span style="id='u'color: #FFFFFF;position:absolute;left:1400px; font-size:30px; font-family: 'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic',Arial,sans-serif;">Welcome </span>
+  <span style="id='u'color: #FFFFFF;position:absolute;left:1400px; font-size:30px; font-family: 'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic',Arial,sans-serif;">Welcome <?php 
+  if(isset($_COOKIE["user"])){
+	  echo $_COOKIE["user"];
+  }
+  else{
+	  echo "err";
+	  header("location:login.php");
+  }
+  ?><br>
+  <button onClick="logout()">LOGOUT</button>
+  </span>
   <button onClick="home()"style="position:absolute;left:215px;width:150px;height:115px;top:-8px;border-radius:0px;"><span style="font-size:30px;">Home</span></button>
-  <button onClick="videos()"style="position:absolute;left:365px;width:150px;height:115px;top:-8px;border-radius:0px;"><span style="font-size:30px;">Videos</span></button>
+  <button onClick="videos()"style="position:absolute;left:364px;width:150px;height:115px;top:-8px;border-radius:0px;"><span style="font-size:30px;">Videos</span></button>
+  <button onClick="chat()"style="position:absolute;left:513px;width:150px;height:115px;top:-8px;border-radius:0px;"><span style="font-size:30px;">Chat</span></button>
+  <button onClick="tutorial()"style="position:absolute;left:662px;width:150px;height:115px;top:-8px;border-radius:0px;"><span style="font-size:30px;">Tutorial</span></button>
 
 <div id="rectangle" style="position:absolute; margin-top: -375px;top:475px;left:50%;
    margin-left: 200px;width:1500px;height:2000px;background-color:#FFFFFF;border-radius: 25px;
@@ -17,18 +29,10 @@
 </body>
 </html>
 <script>
-	/*setUser();
-	function setUser(){
-		var xhttp = new XMLHttpRequest();
-		xhttp.onreadystatechange = function(){
-			if(this.readyState == 4 && this.status == 200){
-				document.getElementById('u').innerHTML = xhttp.responseText;
-			}
-		};
-		xhttp.open("GET","getPHP.php?q=user",true);
-		xhttp.send();
-	}*/
-
+	function logout(){
+		document.cookie = "user=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+		location.href = '/robot/login.php';
+	}
 	function home(){
 		//NOTE 
 		//CHANGE THIS
@@ -39,6 +43,11 @@
 	}
 	function videos(){
 		location.href = '/robot/videos.php';
-
+	}
+	function chat(){
+		location.href = '/robot/chat.php';
+	}
+	function tutorial(){
+		location.href = '/robot/tutorial.php';
 	}
 </script>

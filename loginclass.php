@@ -47,18 +47,20 @@ $result = mysqli_query($conn, $sql);
 #If there is more than 1 row applicable
 if (mysqli_num_rows($result) > 0) {
     while($row = mysqli_fetch_assoc($result)) {
-        success();
+        success($u,$p);
 	}
 } 
 else{
 	fail();
 }
 $conn->close();
-function success(){
+function success($usertmp,$passtmp){
 	#Store username and password in a session
 	#For more session information see w3schools
-	$_SESSION['USER'] = $u;
-	$_SESSION['PASS'] = $p;
+	setcookie("user",$usertmp,time() + (86400*30), "/");
+	#We don't need to store the password we can look it up with the username
+	#setcookie("pass",$passtmp,time() + (86400*30), "/");
+
 	#Goto main.php
 	header('location:home.php');
 }

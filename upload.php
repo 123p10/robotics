@@ -6,7 +6,7 @@ $canUpload = 1;
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
-
+$user = $_COOKIE["user"];
 if(isset($_POST["submit"])) {
 	if(file_exists($target_file)){
 		echo "It Already Exists";
@@ -28,8 +28,8 @@ if(isset($_POST["submit"])) {
 				die("Connection failed: " . $conn->connect_error);
 			}
 			$fn = $_POST['n'];
-			$sql = "INSERT INTO videos (name,url)
-			VALUES ('$fn','$target_file')";			
+			$sql = "INSERT INTO videos (name,url,user)
+			VALUES ('$fn','$target_file','$user')";			
 			if ($conn->query($sql) === TRUE) {
 				echo "New record created successfully";
 			} else {

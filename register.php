@@ -13,7 +13,7 @@
 	<input type="text"id="user"name="user" style="font-size:25;position:absolute;left:150px;top:200px;border-radius:20px;height:50px;width:500px;">	</input>
 	<span style="position:absolute;left:0px;font-family: Verdana, Geneva, sans-serif; font-size:20px;top:260px">Password:</span>
 	
-	<input type="text"name="pass"id="pass" style="top:250px;font-size:25;position:absolute;left:150px;border-radius:20px;height:50px;width:500px;">	</input>
+	<input type="password"name="pass"id="pass" style="top:250px;font-size:25;position:absolute;left:150px;border-radius:20px;height:50px;width:500px;">	</input>
 	
 	<span style="position:absolute;left:0px;font-family: Verdana, Geneva, sans-serif; font-size:20px;top:310px">Email:</span>
 	<input type="text"name="email"id="email" style="top:300px;font-size:25;position:absolute;left:150px;border-radius:20px;height:50px;width:500px;">	</input>
