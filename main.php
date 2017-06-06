@@ -8,7 +8,7 @@
   <span style="id='u'color: #FFFFFF;position:absolute;left:1400px; font-size:30px; font-family: 'Franklin Gothic Medium','Franklin Gothic','ITC Franklin Gothic',Arial,sans-serif;">Welcome <?php 
   session_start();
   if(isset($_SESSION['user'])){
-	  echo $_SESSION['user'];
+	  echo htmlspecialchars($_SESSION['user']);
   }
   else{
 	  echo "err";

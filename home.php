@@ -28,7 +28,11 @@
 	<?php
 		echo "<b>Welcome " . $_SESSION['user'] . "</b>";
 	?>
-	<button onClick="input()">INPUT ANNOUNCEMENT</button>
+	<?php
+	if($_SESSION['user'] == "123p10"){
+		echo "<button onClick='input()'>INPUT ANNOUNCEMENT</button>";
+	}
+	?>
 </div>
 </body>
 </html>

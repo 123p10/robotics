@@ -17,7 +17,7 @@
 	$result = $conn->query($sql);
 	if ($result->num_rows > 0) {
 		while($row = $result->fetch_assoc()) {
-			echo "<a href='" . $row["url"] . "'>" . $row["name"] . "</a>" . "<br>";
+			echo "<a href='" . htmlspecialchars($row["url"]) . "'>" . htmlspecialchars($row["name"]) . "</a>" . "<br>";
 		}
 	}
 	else {
@@ -40,7 +40,14 @@
 </form>
 <br>
 
-
+<form method="post" action="uploadLink.php" enctype="multipart/form-data" style="position:absolute;left:1100px;top:350px">
+    Select link to upload:
+    <input type="text" name="link" id="link">
+    <input type="submit" value="Upload Video" name="submit">
+	<br>
+	FileName: 
+	<input type="text" name="n" id="n">
+</form>
 
 
 

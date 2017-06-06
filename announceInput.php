@@ -1,4 +1,10 @@
-<?php require("main.php"); ?>
+<?php require("main.php"); 
+
+if($_SESSION['user'] != '123p10'){
+	header("location:home.php");
+}
+
+?>
 <html>
 <body>
 
